@@ -137,13 +137,13 @@ class EbisuModel {
     final sig2 = m2 - meanSq;
 
     if (mean <= 0) {
-      throw RangeError('Invalid mean ${mean} found');
+      throw RangeError('Invalid mean $mean found');
     }
     if (m2 <= 0) {
-      throw RangeError('Invalid second moment ${m2} found');
+      throw RangeError('Invalid second moment $m2 found');
     }
     if (sig2 <= 0) {
-      throw RangeError('Invalid variance ${sig2} found: '
+      throw RangeError('Invalid variance $sig2 found: '
           'a=$alpha, b=$beta, t=$time, k=$successes, n=$total, tnow=$tNow, mean=$mean, m2=$m2, sig2=$sig2');
     }
 
