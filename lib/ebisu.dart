@@ -27,16 +27,17 @@ class EbisuModel {
   /// The time since last review (in unspecified units) for which the Beta
   /// distribution models the recall probability.
   final double time;
+
   /// The `alpha` parameter of the Beta distribution.
   final double alpha;
+
   /// The `beta` parameter of the Beta distribution.
   final double beta;
 
-  EbisuModel({@required this.time, this.alpha = 4.0, double beta}) :
-      beta = beta ?? alpha
-  {
-    assert(time > 0.0);
-    assert(alpha > 0.0);
+  EbisuModel({required this.time, this.alpha = 4.0, double? beta})
+      : beta = beta ?? alpha,
+        assert(time > 0.0),
+        assert(alpha > 0.0) {
     assert(this.beta > 0.0);
   }
 
